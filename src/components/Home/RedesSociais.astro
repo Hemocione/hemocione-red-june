@@ -3,12 +3,9 @@
 ---
 
 <section class="redes-sociais">
-  <div class="redes-cards">
-    <img src="/assets/post1-placeholder.png" alt="Post 1" class="post-card" />
-    <img src="/assets/post2-placeholder.png" alt="Post 2" class="post-card" />
-  </div>
+  <img src="/assets/posts.png" class="posts" />
   <div class="redes-content">
-    <h2>Acompanhe a gente nas redes sociais</h2>
+    <h1>Acompanhe a gente nas redes sociais</h1>
     <p>
       Nossos conteúdos são super informativos. Postamos desde guias, pesquisas e
       dúvidas a curiosidades e tendências!
@@ -33,73 +30,80 @@
       >
     </div>
   </div>
-</section>
 
-<style>
-  .redes-sociais {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2.5rem;
-    padding: 3rem 0 2rem 0;
-    flex-wrap: wrap;
-  }
-  .redes-cards {
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
-  }
-  .post-card {
-    width: 220px;
-    height: auto;
-    border-radius: 1rem;
-    box-shadow: 0 2px 12px #0001;
-  }
-  .redes-content {
-    flex: 1 1 350px;
-    min-width: 300px;
-  }
-  .redes-content h2 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 0.7rem;
-  }
-  .redes-content p {
-    color: #444;
-    margin-bottom: 1.2rem;
-  }
-  .redes-icons {
-    display: flex;
-    gap: 1.2rem;
-  }
-  .redes-icons a img {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    background: #f5f5f5;
-    padding: 0.3rem;
-    transition: box-shadow 0.2s;
-  }
-  .redes-icons a img:hover {
-    box-shadow: 0 0 0 2px #d32d2f;
-  }
-  @media (max-width: 900px) {
+  <style>
     .redes-sociais {
-      flex-direction: column;
-      align-items: flex-start;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3.5rem;
+      flex-wrap: wrap;
+    }
+    .posts {
+      min-width: 300px;
+      min-height: 400px;
+      width: 40%;
+      object-fit: contain;
+    }
+    .redes-content {
+      flex: 1 1 350px;
+      min-width: 300px;
+    }
+    .redes-content h1 {
+      font-size: 2rem;
+      font-weight: 500;
+      margin-bottom: 0.7rem;
+    }
+    .redes-content p {
+      color: #444;
+      margin-bottom: 1.2rem;
+    }
+    .redes-icons {
+      display: flex;
       gap: 2rem;
     }
-    .redes-cards {
-      flex-direction: row;
-      gap: 1.2rem;
+    .redes-icons a img {
+      width: 32px;
+      height: 32px;
     }
-  }
-  @media (max-width: 600px) {
-    .redes-content h2 {
-      font-size: 1.1rem;
+    @media (max-width: 900px) {
+      .redes-sociais {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2rem;
+      }
+      .posts {
+        width: 100%;
+        height: auto;
+        justify-content: center;
+        flex-direction: row;
+      }
+      .post-card {
+        position: static;
+        margin: 0 0.5rem;
+        height: 80%;
+      }
+      .redes-content {
+        padding: 0 1rem;
+        max-width: 100%;
+        min-width: 0;
+        width: 100%;
+        text-align: left;
+      }
     }
-    .post-card {
-      width: 120px;
+    @media (max-width: 600px) {
+      .posts {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.7rem;
+      }
+      .post-card {
+        margin: 0;
+        width: 120px;
+      }
+      .redes-content h2 {
+        font-size: 1.1rem;
+      }
     }
-  }
-</style>
+  </style>
+</section>
