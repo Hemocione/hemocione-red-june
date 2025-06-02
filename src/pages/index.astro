@@ -1,34 +1,19 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Hero from "../components/Home/Hero.astro";
-import WhoWeAre from "../components/Home/WhoWeAre.astro";
-import OurImpact from "../components/Home/OurImpact.astro";
-import CallToAction from "../components/Home/CallToAction.astro";
-import HowWorks from "../components/Home/HowWorks.astro";
-import NextEvents from "../components/Home/NextEvents.astro";
-import Feedbacks from "../components/Home/Feedbacks.astro";
-import CallToActionPartners from "../components/Home/CallToActionPartners.astro";
-import BecomeVolunteer from "../components/Home/BecomeVolunteer.astro";
-// import BloodBrothersDialog from "../components/Home/BloodBrothersDialog/BloodBrothersDialog.jsx";
-import CallToActionCanDonate from "../components/Home/CallToActionCanDonate.astro";
+import HeroJunhoVermelho from "../components/Home/HeroJunhoVermelho.astro";
+import ApoieCausa from "../components/Home/ApoieCausa.astro";
+import Bloco30Minutos from "../components/Home/Bloco30Minutos.astro";
+import RedesSociais from "../components/Home/RedesSociais.astro";
+import BaixeApp from "../components/Home/BaixeApp.astro";
 ---
 
 <Layout title="">
   <main id="main" transition:animate="fade">
-    <!-- <BloodBrothersDialog client:load /> -->
-    <!-- Removed Blood Brothers dialog for now -->
-    <Hero />
-    <WhoWeAre />
-    <OurImpact />
-    <CallToAction />
-    <HowWorks />
-    <CallToActionCanDonate />
-    <NextEvents />
-    <CallToActionPartners />
-    <Feedbacks />
-    <!-- <Partners /> -->
-    <!-- <FAQ /> -->
-    <BecomeVolunteer />
+    <HeroJunhoVermelho />
+    <ApoieCausa />
+    <Bloco30Minutos />
+    <RedesSociais />
+    <BaixeApp />
   </main>
 </Layout>
 
@@ -36,5 +21,12 @@ import CallToActionCanDonate from "../components/Home/CallToActionCanDonate.astr
   #main {
     display: flex;
     flex-direction: column;
+    padding: 0 1rem;
+  }
+
+  @media screen and (min-width: 768px) {
+    #main {
+      padding: 0 8rem;
+    }
   }
 </style>

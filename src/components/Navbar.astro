@@ -1,17 +1,12 @@
 ---
-import { config } from "../utils/environment";
 import barsSVG from "../assets/icons/bars.svg";
-import barsDarkSVG from "../assets/icons/bars-dark.svg";
-import logoSVG from "../assets/navbar_logo.svg";
-import logoWhiteSVG from "../assets/logo_white.svg";
-
-const currentPath = Astro.url.pathname;
+import logoSVG from "../assets/logo-junho-vermelho.svg";
+import Button from "./Button.astro";
 ---
 
 <header id="navbar">
   <nav class="container">
     <img id="logo" src={logoSVG.src} alt="Hemocione" />
-    <img id="logo-white" src={logoWhiteSVG.src} alt="Hemocione" />
     <input type="checkbox" id="hamburger-menu" hidden />
     <label for="hamburger-menu" class="hamburger-label">
       <img
@@ -22,133 +17,34 @@ const currentPath = Astro.url.pathname;
         height="25"
         alt="Menu de navegação do site"
       />
-      <img
-        id="hamburger-menu-dark"
-        src={barsDarkSVG.src}
-        class="hamburger-menu"
-        width="25"
-        height="25"
-        alt="Menu de navegação do site"
-      />
       <div class="overlay"></div>
     </label>
     <div class="right-side">
       <ol class="nav-list">
-        <li class={currentPath === "/" ? "active" : ""}>
-          <a href="/">Home</a>
-        </li>
         <li>
-          <a href={config.hemocioneEvents} target="_blank">Eventos</a>
-        </li>
-        <li>
-          <a href={config.hemocioneDonation} target="_blank">
-            Irmãos de Sangue
+          <a
+            href="https://www.hemocione.com.br"
+            target="_blank"
+            class="nav-link"
+          >
+            <Button type="plain" size="small">Conheça o Hemocione</Button>
           </a>
         </li>
         <li>
-          <a href={config.hemocioneCompetitions} target="_blank"
-            >Copas Hemocione</a
-          >
-        </li>
-        <li>
-          <a href={config.hemocioneStore} target="_blank"> Vestir a Camisa </a>
-        </li>
-        <li>
-          <a href="https://ondedoar.hemocione.com.br" target="_blank"
-            >Onde Doar</a
-          >
-        </li>
-        <li class={currentPath === "/app" ? "active" : ""}>
-          <a href="/app">App</a>
+          <a href="#apoie-a-causa" class="nav-link" id="apoie-causa-btn">
+            <Button type="primary" size="small">Apoie a causa</Button>
+          </a>
         </li>
       </ol>
-      <button id="toggle-dark-mode" class="theme-toggler show-only-big">
-        <span class="moon"></span>
-        <span class="sun"></span>
-        <span class="ray"></span>
-        <span class="ray"></span>
-        <span class="ray"></span>
-        <span class="ray"></span>
-        <span class="ray"></span>
-        <span class="ray"></span>
-        <span class="ray"></span>
-        <span class="ray"></span>
-        <span class="ray"></span>
-      </button>
     </div>
   </nav>
 </header>
 
-<script>
-  function initializeTheme() {
-    const documentElement = document.documentElement;
-    const toggleDarkMode = document.getElementById("toggle-dark-mode");
-    const logo = document.getElementById("logo");
-    const logoWhite = document.getElementById("logo-white");
-    const hambugerMenuLight = document.getElementById("hamburger-menu-light");
-    const hambugerMenuDark = document.getElementById("hamburger-menu-dark");
-
-    function setTheme() {
-      const theme = localStorage.getItem("theme") || "light";
-
-      if (theme === "dark") {
-        documentElement.classList.add("dark");
-        toggleDarkMode?.classList.add("dark");
-        logo?.classList.add("hidden");
-        hambugerMenuLight?.classList.add("hidden");
-        logoWhite?.classList.remove("hidden");
-        hambugerMenuDark?.classList.remove("hidden");
-      } else {
-        documentElement.classList.remove("dark");
-        toggleDarkMode?.classList.remove("dark");
-        logo?.classList.remove("hidden");
-        hambugerMenuLight?.classList.remove("hidden");
-        logoWhite?.classList.add("hidden");
-        hambugerMenuDark?.classList.add("hidden");
-      }
-    }
-
-    function toggleTheme() {
-      const currentTheme = localStorage.getItem("theme") || "light";
-      const newTheme = currentTheme === "dark" ? "light" : "dark";
-      localStorage.setItem("theme", newTheme);
-      setTheme();
-    }
-
-    // Set initial theme
-    setTheme();
-    // Add click listener to toggle button
-    toggleDarkMode?.addEventListener("click", toggleTheme);
-
-    // Observe DOM changes to handle dynamic content
-    const observer = new MutationObserver((mutations) => {
-      mutations.forEach((mutation) => {
-        if (mutation.type === "childList") {
-          const newToggleButton = document.getElementById("toggle-dark-mode");
-          if (
-            newToggleButton &&
-            !newToggleButton.hasAttribute("data-initialized")
-          ) {
-            newToggleButton.setAttribute("data-initialized", "true");
-            newToggleButton.addEventListener("click", toggleTheme);
-            setTheme();
-          }
-        }
-      });
-    });
-
-    observer.observe(document.body, {
-      childList: true,
-      subtree: true,
-    });
-  }
-
-  // Re-initialize on Astro page transitions and on first page load
-  document.addEventListener("astro:page-load", initializeTheme);
-  document.addEventListener("astro:after-swap", initializeTheme);
-</script>
-
 <style>
+  #logo {
+    width: 100%;
+    max-width: 300px;
+  }
   header {
     height: var(--navbar-height);
     box-shadow: 0 0 4px var(--hemo-color-text-secondary-opaque);
@@ -163,6 +59,7 @@ const currentPath = Astro.url.pathname;
     align-items: center;
     justify-content: space-between;
     z-index: 5;
+    gap: 2rem;
   }
 
   .right-side {
@@ -172,25 +69,19 @@ const currentPath = Astro.url.pathname;
     z-index: 2;
   }
 
-  nav li a:hover,
-  nav li a:focus {
-    color: var(--hemo-color-primary);
-  }
-
   .nav-list {
     list-style-type: none;
     display: inline-flex;
-    gap: 2rem;
-  }
-
-  .nav-list .active {
-    color: var(--hemo-color-primary);
-    border-bottom: 2px solid var(--hemo-color-primary);
+    gap: 1rem;
   }
 
   .nav-list li {
     display: flex;
     align-items: center;
+  }
+
+  .nav-link {
+    text-decoration: none;
   }
 
   .hamburger-menu {
@@ -215,9 +106,6 @@ const currentPath = Astro.url.pathname;
   #hamburger-menu:checked ~ .right-side {
     right: 0;
     visibility: visible;
-  }
-  #hamburger-menu:checked ~ .right-side li a:hover {
-    color: var(--hemo-color-text-primary);
   }
 
   #hamburger-menu:checked ~ .hamburger-label .overlay {
@@ -325,7 +213,7 @@ const currentPath = Astro.url.pathname;
       right: -50%;
       height: 100dvh;
       background-color: var(--hemo-color-background);
-      padding: 2rem;
+      padding: 1rem;
       gap: 2rem;
       margin: 0;
 
@@ -368,3 +256,28 @@ const currentPath = Astro.url.pathname;
     }
   }
 </style>
+
+<script>
+  const apoieCausaBtn = document.getElementById("apoie-causa-btn");
+  const hamburgerMenu = document.getElementById(
+    "hamburger-menu"
+  ) as HTMLInputElement;
+
+  console.log(apoieCausaBtn);
+  console.log(hamburgerMenu);
+
+  apoieCausaBtn?.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    // Close the drawer if it's open
+    if (hamburgerMenu?.checked) {
+      hamburgerMenu.checked = false;
+    }
+
+    // Wait for the drawer to close before scrolling
+    setTimeout(() => {
+      const targetSection = document.querySelector("#apoie-a-causa");
+      targetSection?.scrollIntoView({ behavior: "smooth" });
+    }, 300); // Match the transition duration of the drawer
+  });
+</script>

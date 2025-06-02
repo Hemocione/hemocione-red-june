@@ -1,0 +1,149 @@
+---
+// Componente Apoie a causa mesmo sem doar
+---
+
+<section id="apoie-a-causa" class="apoie-causa">
+  <h1>
+    <span class="red">Apoie a causa</span> mesmo sem doar
+  </h1>
+  <p class="subtitle">
+    Não pode doar sangue? Você pode ajudar a causa de muitas outras formas.
+  </p>
+  <div class="apoie-cards">
+    <div class="apoie-card">
+      <div class="apoie-icon">
+        <img src="/assets/icons/shirt.svg" alt="Vista a camisa" />
+      </div>
+      <h3>Vista a camisa</h3>
+      <p>
+        Adquira um boné, camiseta ou ecobag. O valor dos itens é revertido para
+        ajudar a manter a ONG.
+      </p>
+      <a href="https://vista.hemocione.com.br/produtos/" target="_blank"
+        >Conferir itens &rarr;</a
+      >
+    </div>
+    <div class="apoie-card">
+      <div class="apoie-icon">
+        <img src="/assets/icons/money-plan.svg" alt="Assine o plano" />
+      </div>
+      <h3>Assine o plano</h3>
+      <p>
+        Doe um valor por mês com os planos de assinatura Irmãos de sangue.
+        Opções a partir de R$9,90!
+      </p>
+      <a href="https://apoie.hemocione.com.br" target="_blank"
+        >Conhecer planos &rarr;</a
+      >
+    </div>
+    <div class="apoie-card">
+      <div class="apoie-icon">
+        <img src="/assets/icons/volunteer.svg" alt="Entre no time" />
+      </div>
+      <h3>Entre no time</h3>
+      <p>
+        Faça parte da nossa equipe de voluntários para eventos, comunicação,
+        tecnologia e mais!
+      </p>
+      <a href="https://forms.gle/wAQXTe6a69Jqfj5A7" target="_blank"
+        >Enviar candidatura &rarr;</a
+      >
+    </div>
+    <div class="apoie-card">
+      <div class="apoie-icon">
+        <img src="/assets/icons/partnership.svg" alt="Faça uma parceria" />
+      </div>
+      <h3>Faça uma parceria</h3>
+      <p>
+        Sua empresa pode ajudar com parcerias em eventos, patrocínio de
+        materiais, entre outras opções!
+      </p>
+      <a
+        href="https://api.whatsapp.com/send/?phone=5521970114393&text=Oi%21+Gostaria+de+me+tornar+parceiro+do+Hemocione+e+ajudar+a+salvar+vidas%21+Pode+me+ajudar+%3F&type=phone_number&app_absent=0"
+        target="_blank">Entrar em contato &rarr;</a
+      >
+    </div>
+  </div>
+</section>
+
+<style>
+  .apoie-causa {
+    padding: 3rem 0 2rem 0;
+    text-align: center;
+  }
+  .apoie-causa .red {
+    color: #d32d2f;
+  }
+  .apoie-causa h1 {
+    margin-bottom: 0.5rem;
+  }
+  .subtitle {
+    color: #444;
+    margin-bottom: 2.5rem;
+  }
+  .apoie-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  .apoie-card {
+    background: #fff;
+    border-radius: 1rem;
+    border: 1px solid #d32d2f;
+    gap: 1rem;
+    box-shadow: 0 2px 12px #0001;
+    padding: 2rem 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    width: 260px;
+    min-height: 300px;
+    height: 300px;
+    box-sizing: border-box;
+  }
+  .apoie-icon {
+    height: 36px;
+    padding: 0;
+    color: #d32d2f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+  }
+  .apoie-card h3 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+  .apoie-card p {
+    margin-bottom: 1.2rem;
+  }
+  .apoie-card a {
+    color: #d32d2f;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s;
+    margin-top: auto;
+  }
+  .apoie-card a:hover {
+    color: #a51c1e;
+    text-decoration: underline;
+  }
+
+  @media (max-width: 1024px) {
+    .apoie-cards {
+      display: flex;
+      flex-direction: row;
+      overflow-x: auto;
+      gap: 1rem;
+      max-width: 100vw;
+      padding-bottom: 1rem;
+    }
+    .apoie-card {
+      flex: 0 0 auto;
+    }
+  }
+</style>
