@@ -66,28 +66,6 @@ const pageTitle = title ? `Hemocione - ${title}` : "Hemocione";
       // @ts-expect-error - Gtag is defined with arguments
       gtag("config", "G-75J9MM7SHP");
     </script>
-
-    <script>
-      // Garante que a classe 'dark' está correta no html antes de qualquer renderização
-      (function () {
-        try {
-          var theme = localStorage.getItem("theme");
-          if (!theme) {
-            theme = window.matchMedia("(prefers-color-scheme: dark)").matches
-              ? "dark"
-              : "light";
-          }
-          if (theme === "dark") {
-            document.documentElement.classList.add("dark");
-          } else {
-            document.documentElement.classList.remove("dark");
-          }
-        } catch (e) {
-          console.log("mamou");
-          console.error(e);
-        }
-      })();
-    </script>
   </head>
   <body>
     <a href="#main" class="skip-to-main-content">
