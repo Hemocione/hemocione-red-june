@@ -1,12 +1,11 @@
 ---
 import barsSVG from "../assets/icons/bars.svg";
-import logoSVG from "../assets/logo-junho-vermelho.svg";
 import Button from "./Button.astro";
 ---
 
 <header id="navbar">
   <nav class="container">
-    <img id="logo" src={logoSVG.src} alt="Hemocione" />
+    <img id="logo" src="/assets/logo-junho-vermelho.png" alt="Hemocione" />
     <input type="checkbox" id="hamburger-menu" hidden />
     <label for="hamburger-menu" class="hamburger-label">
       <img
@@ -57,12 +56,15 @@ import Button from "./Button.astro";
   }
 
   nav {
+    width: 100%;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
     z-index: 5;
     gap: 2rem;
+    margin: 0;
+    padding: 0 8rem;
   }
 
   .right-side {
@@ -239,6 +241,10 @@ import Button from "./Button.astro";
 
     .hamburger-menu {
       display: block;
+    }
+
+    nav {
+      padding: 0 1rem;
     }
   }
 </style>
