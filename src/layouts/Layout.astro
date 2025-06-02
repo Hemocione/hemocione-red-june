@@ -1,6 +1,4 @@
 ---
-import { ViewTransitions } from "astro:transitions";
-import LoadingIndicator from "astro-loading-indicator/component";
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
@@ -96,12 +94,14 @@ const pageTitle = title ? `Hemocione - ${title}` : "Hemocione";
       Ir para o conteúdo principal
     </a>
     <Navbar />
+    <div style="height: var(--navbar-height);"></div>
     <slot />
     <Footer />
     <style>
       body {
         display: flex;
         flex-direction: column;
+        min-height: 100vh;
       }
 
       .skip-to-main-content {

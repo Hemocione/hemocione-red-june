@@ -13,12 +13,21 @@ import Button from "../Button.astro";
       vidas.
     </p>
     <div class="hero-buttons">
-      <Button type="primary" size="small">Onde doar</Button>
-      <Button type="plain" size="small">Posso doar?</Button>
+      <a
+        href="https://ondedoar.hemocione.com.br/"
+        target="_blank"
+        rel="noopener"><Button type="primary" size="small">Onde doar</Button></a
+      >
+      <a
+        href="https://possodoar.hemocione.com.br/"
+        target="_blank"
+        rel="noopener"
+      >
+        <Button type="plain" size="small">Posso doar?</Button>
+      </a>
     </div>
   </div>
   <div class="hero-cards">
-    <!-- Imagem ilustrativa dos cards (substitua pelo SVG/ilustração real depois) -->
     <img src="/cartinhas.png" alt="Cartas ilustrativas" class="cards-img" />
   </div>
 </section>
@@ -53,6 +62,9 @@ import Button from "../Button.astro";
   .hero-buttons {
     display: flex;
     gap: 1rem;
+  }
+  .hero-buttons a {
+    text-decoration: none;
   }
   .hero-cards {
     flex: 1;

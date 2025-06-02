@@ -4,7 +4,6 @@ import tiktokSVG from "../assets/icons/tiktok.svg";
 import xSVG from "../assets/icons/x.svg";
 import linkedinSVG from "../assets/icons/linkedin.svg";
 import logoWhiteSVG from "../assets/logo_white.svg";
-import { config } from "../utils/environment";
 
 const SOCIAL_LINKS = [
   {
@@ -45,15 +44,16 @@ const SOCIAL_LINKS = [
       <h3>Serviços</h3>
       <ol>
         <li>
-          <a href={config.hemocioneEvents} target="_blank"> Eventos </a>
+          <a href="https://eventos.hemocione.com.br/" target="_blank">Eventos</a
+          >
         </li>
         <li>
-          <a href={config.hemocioneCompetitions} target="_blank"
+          <a href="https://copa.hemocione.com.br/" target="_blank"
             >Copas Hemocione</a
           >
         </li>
         <li>
-          <a href={config.hemocioneCanDonate} target="_blank"
+          <a href="https://possodoar.hemocione.com.br/" target="_blank"
             >Descubra se você pode doar sangue</a
           >
         </li>
@@ -63,7 +63,7 @@ const SOCIAL_LINKS = [
       <h3>Colabore</h3>
       <ol>
         <li>
-          <a href={config.hemocioneDonation} target="_blank">
+          <a href="https://apoie.hemocione.com.br/" target="_blank">
             Irmãos de sangue
           </a>
         </li>
