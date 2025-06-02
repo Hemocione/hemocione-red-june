@@ -1,0 +1,126 @@
+---
+import Title from "../Title.astro";
+import FeedbacksSlider, { type Item } from "./FeedbacksSlider.vue";
+
+import MariaCecilia from "../../assets/feedbacks/1714843639.webp";
+import JoaoArthur from "../../assets/feedbacks/1714843764.webp";
+import PauloLace from "../../assets/feedbacks/1714843945.webp";
+import MarianaMolon from "../../assets/feedbacks/1714844057.webp";
+import FeedbackImage1 from "../../assets/feedbacks/1714844183.webp";
+import FeedbackImage2 from "../../assets/feedbacks/1714844180.webp";
+import FeedbackImage3 from "../../assets/feedbacks/1714844177.webp";
+import FeedbackImage4 from "../../assets/feedbacks/1714844170.webp";
+import FeedbackImage5 from "../../assets/feedbacks/1714844167.webp";
+import FeedbackImage6 from "../../assets/feedbacks/1714844163.webp";
+import FeedbackImage7 from "../../assets/feedbacks/1714844160.webp";
+import FeedbackImage8 from "../../assets/feedbacks/1714844157.webp";
+
+const ITEMS: Item[] = [
+  {
+    kind: "image",
+    size: "large",
+    src: FeedbackImage1.src,
+  },
+  {
+    kind: "image",
+    size: "small",
+    src: FeedbackImage2.src,
+  },
+  {
+    kind: "feedback",
+    size: "default",
+    text: "O motivo de eu doar sangue toda vez é pela sensação que sinto após doar. Cada vez que você doa sangue você está ajudando 4 pessoas diferentes e contribuindo para a comunidade!",
+    authorName: "Maria Cecília",
+    authorSrc: MariaCecilia.src,
+    eventName: "A+",
+  },
+  {
+    kind: "image",
+    size: "default",
+    src: FeedbackImage3.src,
+  },
+  {
+    kind: "image",
+    size: "large",
+    src: FeedbackImage4.src,
+  },
+  {
+    kind: "feedback",
+    size: "small",
+    text: "Eu sempre tive interesse em doar sangue, mas nunca tive a oportunidade, através de uma incrível campanha realizada pelo Hemocione na minha escola, eu finalmente doei sangue pela primeira vez.",
+    authorName: "João Arthur",
+    authorSrc: JoaoArthur.src,
+    eventName: "A+",
+  },
+  {
+    kind: "feedback",
+    size: "large",
+    text: "É um momento muito bonito e a sensação é realmente incomparável, especialmente quando você recebe aquela mensagem dizendo que você acabou de salvar uma vida!",
+    authorName: "Paulo Lacê",
+    authorSrc: PauloLace.src,
+    eventName: "O+",
+  },
+  {
+    kind: "image",
+    size: "default",
+    src: FeedbackImage5.src,
+  },
+  {
+    kind: "image",
+    size: "large",
+    src: FeedbackImage6.src,
+  },
+  {
+    kind: "feedback",
+    size: "large",
+    text: "É um momento tão rápido e que significa tanto pra saúde de outras pessoas. Eu sempre tive vontade mas o que me levou a doar sangue de verdade foi a mobilização proporcionada pelo Hemocione.",
+    authorName: "Mariana Molon",
+    authorSrc: MarianaMolon.src,
+    eventName: "A+",
+  },
+  {
+    kind: "image",
+    size: "large",
+    src: FeedbackImage7.src,
+  },
+  {
+    kind: "image",
+    size: "small",
+    src: FeedbackImage8.src,
+  },
+];
+---
+
+<section>
+  <div class="container title">
+    <Title subtitle="Eu já hemocionei e você?">
+      Confira quem já hemocionou com a gente
+    </Title>
+  </div>
+  <br />
+  <br />
+  <FeedbacksSlider client:only="vue" items={ITEMS} duration={100} />
+  <br />
+  <br />
+  <FeedbacksSlider
+    client:only="vue"
+    items={ITEMS}
+    duration={100}
+    direction="reverse"
+  />
+</section>
+
+<style>
+  section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    padding: 3rem 0;
+  }
+
+  .title {
+    text-align: center;
+  }
+</style>

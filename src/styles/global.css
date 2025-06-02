@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+:root {
+    --hemo-color-primary: #bb0a08;
+    --hemo-color-primary-dark: #8a0000;
+    --hemo-color-primary-light: #FF6262;
+    --hemo-color-secondary: #f2f2f2;
+    --hemo-color-secondary-dark: #d9d9d9;
+    --hemo-color-success: #2ac769;
+    --hemo-color-warn: #f6a609;
+    --hemo-color-text-secondary: #25282B;
+    --hemo-color-text-secondary-opaque: rgba(37, 40, 43, 0.2) ;
+    --hemo-color-text-primary: #f2f2f2;
+    --hemo-color-background: #FFF;
+    --hemo-color-link: #005FED;
+    --hemo-color-cornflower_blue: #6E91C7;
+    --hemo-color-midsummers_dream: #B2CFD8;
+    --hemo-color-princess_ivory: #FAEAD4;
+    --hemo-color-valerie: #FCE6E8;
+    --hemo-color-mexican_chile: #CD6D71;
+
+    --hemo-color-blue-800: #1E293B;
+
+    --hemo-color-slate-200: #E2E8F0;
+    --hemo-color-slate-300: #CBD5E1;
+    --hemo-color-slate-400: #94A3B8;
+
+    --navbar-height: 65px;
+}
+
+.dark {
+    --hemo-color-text-primary: #1f2123;
+    --hemo-color-secondary: #2d3033;
+    --hemo-color-secondary-dark: #1f2123;
+    --hemo-color-text-secondary: #f2f2f2;
+    --hemo-color-text-secondary-opaque: rgba(242, 242, 242, 0.2);
+    --hemo-color-background: #25282B;
+    
+    --hemo-color-slate-300: #303438;
+
+    --hemo-color-blue-800: #f2f2f2;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--hemo-color-text-secondary);
+    background-color: var(--hemo-color-background);
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100dvh;
+    width: 100dvw;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: "Lato", monospace, sans-serif;
+    margin: 0;
+    line-height: 1;
+    transition: background-color 0.2s;
+}
+
+a {
+    all: unset;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+    line-height: 1.5rem;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--hemo-color-primary);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 10px;
+}
+
+@media (max-width: 1000px) {
+    html {
+      font-size: 93.75%;
+    }
+}
+  
+@media (max-width: 720px) {
+    html {
+      font-size: 87.5%;
+    }
+}

@@ -1,0 +1,61 @@
+---
+import Button from "../Button.astro";
+---
+
+<section>
+  <div class="container">
+    <aside>
+      <h2>Seja um parceiro Hemocione</h2>
+      <p>
+        Juntos, podemos salvar mais vidas. Faça sua parte realizando um evento
+        ou apoiando o projeto.
+      </p>
+    </aside>
+    <aside>
+      <a
+        href="https://wa.me/5521970114393?text=Oi!%20Gostaria%20de%20me%20tornar%20parceiro%20do%20Hemocione%20e%20ajudar%20a%20salvar%20vidas!%20Pode%20me%20ajudar%20?"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Button type="secondary">Seja Parceiro</Button>
+      </a>
+    </aside>
+  </div>
+
+  <style>
+    section {
+      background-color: var(--hemo-color-primary);
+      color: var(--hemo-color-text-primary);
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      padding: 2rem 0;
+    }
+
+    h2 {
+      margin: 0 0 1rem 0;
+    }
+
+    aside:first-child {
+      flex: 1;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        padding: 2rem 1rem;
+      }
+
+      aside {
+        text-align: center;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  </style>
+</section>
